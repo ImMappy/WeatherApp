@@ -9,7 +9,7 @@ const hour = document.querySelectorAll('.hour-grid')
 const tempHour = document.querySelectorAll('.temperature-hour')
 const day = document.querySelectorAll('.day-grid')
 const tempDay = document.querySelectorAll('.temperature-day')
-const imgLogo = document.querySelector('.logo');
+const imgLogo = document.querySelector('.img-logo');
 const loadingOverlay = document.querySelector('.loading')
 
 if(navigator.geolocation){
@@ -38,7 +38,7 @@ function apiExecution(longitude,latitude){
 
 
         for(let i = 0; i < hour.length; i++){
-            let hoursIncr = now + i * 5;
+            let hoursIncr = now + i * 3;
 
             if(hoursIncr > 24){
 
@@ -56,7 +56,7 @@ function apiExecution(longitude,latitude){
         // TEMPERATURES 
 
         for(let i = 0; i< tempHour.length;i++){
-            tempHour[i].textContent = `${Math.trunc(result.hourly[i * 5].temp)}°`
+            tempHour[i].textContent = `${Math.trunc(result.hourly[i * 3].temp)}°`
         }
 
         // DAYS WITH ONLY 3 LETTERS OF THE DAY
